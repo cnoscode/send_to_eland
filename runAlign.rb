@@ -13,7 +13,7 @@ class RunEland
 
   def unzip_files()
     puts "Unzipping fastq files..."
-		unzip = `/Users/cjose/Desktop/send_to_eland/./unzip.sh`
+    unzip = `/Users/cjose/Desktop/send_to_eland/./unzip.sh`
   end
   
   def sort_files()
