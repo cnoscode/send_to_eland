@@ -12,24 +12,16 @@ class RunEland
   end
 
   def unzip_files()
-    # substitute with "Sample_Lane" directories
+    puts "Unzipping fastq files..."
+		unzip = `/Users/cjose/Desktop/send_to_eland/./unzip.sh`
+  end
+  
+  def sort_files()
     @dir_count += 1
     if @dir_count == 4
       puts "Grepping is finished for all directories."
       return true
     end 
-#   d = `cd /Users/cjose/Desktop/fastq#{@dir_count}`
-    puts "Unzipping fastq files..."
-#   unzip_fastq = `for file in ./*; do gunzip $file; done`
-    sort_files()
-  end
-  
-  def sort_files()
-#     @dir_count += 1
-#     if @dir_count == 4
-#       puts "Grepping is finished for all directories."
-#       return true
-#     end 
     puts "Moving to next directory..."
     puts "Finding and sorting R1 files..."
     @r1_files = `find /Users/cjose/Desktop/fastq#{@dir_count} -name '*R1*' | sort`
